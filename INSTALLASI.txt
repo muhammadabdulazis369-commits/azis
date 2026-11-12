@@ -1,0 +1,59 @@
+PANDUAN INSTALASI - BUMDes SEJAHTERA MANDIRI
+============================================
+
+KEBUTUHAN
+- XAMPP dengan Apache dan MySQL/MariaDB
+- PHP 8.1 atau lebih baru
+- Ekstensi PHP pdo_mysql aktif
+
+CARA INSTALASI DI WINDOWS
+1. Ekstrak ZIP ini.
+2. Salin folder "bumdes-sejahtera-mandiri" ke C:\\xampp\\htdocs\\
+   Hasil akhirnya harus seperti ini:
+   C:\\xampp\\htdocs\\bumdes-sejahtera-mandiri\\install.php
+   Jangan menaruh folder di dalam folder bernama sama.
+3. Buka XAMPP Control Panel.
+4. Jalankan Apache dan MySQL sampai keduanya berstatus Running.
+5. Buka alamat berikut di browser:
+   http://localhost/bumdes-sejahtera-mandiri/install.php
+6. Isi pengaturan MySQL:
+   Host       : 127.0.0.1
+   Database   : bumdes_sejahtera
+   Username   : root
+   Password   : kosong (untuk XAMPP default)
+   Jika MySQL Anda memakai password, masukkan password MySQL yang benar.
+7. Klik "Pasang Database dan Sistem" dan tunggu pesan instalasi berhasil.
+8. Buka website publik:
+   http://localhost/bumdes-sejahtera-mandiri/masyarakat/
+9. Buka halaman admin:
+   http://localhost/bumdes-sejahtera-mandiri/admin/login.php
+10. Login awal:
+    Username : admin
+    Password : admin12345
+11. Setelah berhasil login, buka menu Pengaturan untuk mengganti password.
+12. Hapus file install.php setelah instalasi berhasil. Jangan hapus folder config.
+
+PENTING
+- Wizard instalasi membuat database dan tabel secara otomatis. Tidak perlu impor
+  database/bumdes.sql secara manual untuk instalasi baru.
+- Jika database sudah berisi data, lakukan backup terlebih dahulu. Installer
+  tidak menghapus tabel/data yang sudah ada.
+- Jangan membagikan password admin kepada orang lain.
+
+JIKA HALAMAN INSTALLER MENAMPILKAN PDO_MYSQL BELUM AKTIF
+1. XAMPP Control Panel > Apache > Config > PHP (php.ini).
+2. Cari ;extension=pdo_mysql lalu hapus tanda titik koma di depannya.
+3. Simpan file php.ini.
+4. Stop lalu Start Apache kembali.
+5. Muat ulang halaman install.php.
+
+JIKA KONEKSI DATABASE GAGAL
+- Pastikan MySQL berstatus Running.
+- Pastikan host, username, password, dan nama database benar.
+- Jika port MySQL bukan 3306, sesuaikan konfigurasi host pada wizard atau
+  gunakan host dengan format 127.0.0.1:PORT jika didukung konfigurasi PHP Anda.
+
+BATAS PENGUJIAN PAKET
+Seluruh file PHP telah diperiksa dengan php -l dan arsip ZIP telah diperiksa
+integritasnya. Pengujian koneksi database dan alur browser harus dilakukan di
+XAMPP pada komputer pengguna karena kredensial dan layanan MySQL lokal berbeda.

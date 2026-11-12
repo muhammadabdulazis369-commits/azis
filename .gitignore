@@ -1,0 +1,7 @@
+*.log
+.env
+.DS_Store
+Thumbs.db
+
+/config/database.local.php
+/config/installed.lock
